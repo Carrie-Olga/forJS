@@ -24,8 +24,8 @@ function game() {
         game();
     }
 }
-
 game();
+
 /*while (true) {
     if (guessNum > guessedNum) {
         alert("Your guess is too big");
