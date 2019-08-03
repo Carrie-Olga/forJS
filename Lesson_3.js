@@ -1,41 +1,41 @@
 //1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
-//Почему код в конце этого задания выдает бесконечный цикл? Не могу понять, вроде логика правильная...
+// //Почему код в конце этого задания выдает бесконечный цикл? Не могу понять, вроде логика правильная...
 
-var arr = [];
-for (var i = 1; i < 101; i++) {
-    arr.push(i);
-}
-console.log(arr.length);
+// var arr = [];
+// for (var i = 1; i < 101; i++) {
+//     arr.push(i);
+// }
+// console.log(arr.length);
 
-for (var i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 0 || arr[i] == 1)  {
-            arr.splice(i, 1);
-        } 
-}
-console.log(arr.length);
+// for (var i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 == 0 || arr[i] == 1)  {
+//             arr.splice(i, 1);
+//         } 
+// }
+// console.log(arr.length);
 
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > 8 && arr[i] % 3 == 0)  {
-        arr.splice(i, 1);
-    } 
-}
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > 8 && arr[i] % 5 == 0)  {
-        arr.splice(i, 1);
-    } 
-}
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > 8 && arr[i] % 7 == 0)  {
-        arr.splice(i, 1);
-    } 
-}
-for (var i = 0; i < arr.length; i++) {
-    if (arr[i] > 8 && arr[i] % 9 == 0)  {
-        arr.splice(i, 1);
-    } 
-}
-console.log(arr);
-console.log(arr.length);
+// for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] > 8 && arr[i] % 3 == 0)  {
+//         arr.splice(i, 1);
+//     } 
+// }
+// for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] > 8 && arr[i] % 5 == 0)  {
+//         arr.splice(i, 1);
+//     } 
+// }
+// for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] > 8 && arr[i] % 7 == 0)  {
+//         arr.splice(i, 1);
+//     } 
+// }
+// for (var i = 0; i < arr.length; i++) {
+//     if (arr[i] > 8 && arr[i] % 9 == 0)  {
+//         arr.splice(i, 1);
+//     } 
+// }
+// console.log(arr);
+// console.log(arr.length);
 
 //Этот код вместо строк с 17 по 36:
 // for (var j = 3; j < 10; j + 2) {
@@ -64,3 +64,18 @@ console.log(arr.length);
 // }
 
 //4. Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. 
+//Не нашла ответа, только для PHP
+
+//5. Нарисовать пирамиду с 20 рядами с помощью console.log
+function pyramid() {
+    var rows = 20;
+    var output = "";
+    for (var i = 1; i <= rows; i++) {
+        for (var j = 1; j <= i; j++) {
+            output += "x";
+        }
+        console.log(output);
+        output = "";
+    }
+} 
+pyramid();
