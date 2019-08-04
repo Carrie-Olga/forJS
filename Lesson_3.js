@@ -51,10 +51,36 @@
 //Организовать функцию countBasketPrice, которая будет считать стоимость корзины
 
 
-// const cartObj = [{name: 'first item', price: 200}, {name: 'second item', price: 300}, {name: 'second item', price: 100}];
-// //console.log(cartObj[0].price);
-// console.log(countBasketPrice(cartObj));
+const cartObj = [{
+    name: 'first item', 
+    price: 200,
+    count: 2
+}, 
+{
+    name: 'second item', 
+    price: 300,
+    count: 1
+}, 
+{
+    name: 'second item', 
+    price: 100,
+    count: 2
+}];
 
+// var sum = 0; //summing using forEach
+// cartObj.forEach((good) => {
+//     sum += good.price * good.count;
+// });
+// console.log(sum);
+
+ //summing using reduce
+// const totalPrice = cartObj.reduce((sum, good) => {
+//     sum += good.price * good.count;
+//     return sum;
+// }, 0)
+// console.log(totalPrice);
+
+//console.log(countBasketPrice(cartObj)); //summing using countBasketPrice function
 // function countBasketPrice(obj) {
 //     let sum = 0;
 //     for (let i = 0; i < obj.length; i++) {
@@ -63,19 +89,38 @@
 //     return sum;
 // }
 
+
 //4. Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. 
-//Не нашла ответа, только для PHP
+// for (var i = 0; i < 10; console.log(i++)) {
+
+// }
+
 
 //5. Нарисовать пирамиду с 20 рядами с помощью console.log
-function pyramid() {
-    var rows = 20;
-    var output = "";
-    for (var i = 1; i <= rows; i++) {
-        for (var j = 1; j <= i; j++) {
-            output += "x";
-        }
-        console.log(output);
-        output = "";
-    }
-} 
-pyramid();
+// function pyramid() {
+//     var rows = 20;
+//     var output = "";
+//     for (var i = 1; i <= rows; i++) {
+//         for (var j = 1; j <= i; j++) {
+//             output += "x";
+//         }
+//         console.log(output);
+//         output = "";
+//     }
+// } 
+// pyramid();
+
+// for (var i = 0; i < 10; console.log('x'.repeat(i++))) {
+
+// }
+
+//6. *Написать свою реализацию функции forEach и map
+// const arr = [1, 2, 3, 4, 5];
+// arr.forEach((item, index) => {
+//     console.log(item, index);
+//     console.log(item);
+//     console.log(index);
+// }) 
+
+//7. *Написать свою реализацию функции forEach и map без использования цикла(рекурсия)
+//8. *Написать бота для игры написаной на вебинаре(код в гитлабе)
