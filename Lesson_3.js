@@ -51,21 +51,21 @@
 //Организовать функцию countBasketPrice, которая будет считать стоимость корзины
 
 
-const cartObj = [{
-    name: 'first item', 
-    price: 200,
-    count: 2
-}, 
-{
-    name: 'second item', 
-    price: 300,
-    count: 1
-}, 
-{
-    name: 'second item', 
-    price: 100,
-    count: 2
-}];
+// const cartObj = [{
+//     name: 'first item', 
+//     price: 200,
+//     count: 2
+// }, 
+// {
+//     name: 'second item', 
+//     price: 300,
+//     count: 1
+// }, 
+// {
+//     name: 'second item', 
+//     price: 100,
+//     count: 2
+// }];
 
 // var sum = 0; //summing using forEach
 // cartObj.forEach((good) => {
@@ -74,10 +74,14 @@ const cartObj = [{
 // console.log(sum);
 
  //summing using reduce
+
+
 // const totalPrice = cartObj.reduce((sum, good) => {
-//     sum += good.price * good.count;
-//     return sum;
+//     return sum += good.price * good.count;
 // }, 0)
+
+// const totalPrice = cartObj.reduce((sum, good) => sum += good.price * good.count, 0); //very short way
+
 // console.log(totalPrice);
 
 //console.log(countBasketPrice(cartObj)); //summing using countBasketPrice function
@@ -109,6 +113,18 @@ const cartObj = [{
 //     }
 // } 
 // pyramid();
+
+// const pyramid = (count) => {
+//     for (var i = 1; i <= count; i++) {
+//         var ex = '';
+//         for (var j = 1; j <= i; j++) {
+//             ex += 'x';
+//         }
+//        console.log(ex);
+//     }
+// }
+
+// pyramid(3);
 
 // for (var i = 0; i < 10; console.log('x'.repeat(i++))) {
 
