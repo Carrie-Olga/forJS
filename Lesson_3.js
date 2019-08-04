@@ -56,7 +56,7 @@
     //     price: 200,
     //     count: 2
     // }, 
-    // {ß
+    // {
     //     name: 'second item', 
     //     price: 300,
     //     count: 1
