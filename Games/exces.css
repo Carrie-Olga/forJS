@@ -1,0 +1,43 @@
+body {
+   display: flex;
+   height: 100vh;
+   justify-content: center;
+   align-items: center;
+}
+
+.board {
+    width: 200px;
+    height: 200px;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    height: calc(100% / 3);
+}
+
+.row:first-child {
+    border-bottom: 1px solid black;
+}
+
+.row:last-child {
+    border-top: 1px solid black;
+}
+
+.cell {
+    width: calc(100% / 3);
+    height: 100%;
+    font-size: 38px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.cell:first-child {
+    border-right: 1px solid black;
+}
+
+.cell:last-child {
+    border-left: 1px solid black;
+}
+
+
