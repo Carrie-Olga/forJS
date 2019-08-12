@@ -27,5 +27,5 @@ function moveToCart(event) {
     //console.log(total);
 }
 var totalAmount = document.createElement('p');
-totalAmount.innerText = 'You purchased good for total of ' + total;
+totalAmount.innerText = 'The cart is empty';
 cart.appendChild(totalAmount);
