@@ -25,8 +25,16 @@ function checkWinner() {
         (cells[0].innerHTML == 'X' && cells[4].innerHTML == 'X' && cells[8].innerHTML == 'X') ) {
             var winner = document.createElement('div');
             winner.innerText = 'X won!';
-            board.innerHTML = winner;
-            console.log(winner);
+            board.innerHTML = '';
+            board.appendChild(winner);
+            var button = document.createElement('button');
+            button.innerText = 'Play again';
+            button.setAttribute('type', 'button');
+            board.appendChild(button);
+            button.addEventListener('click', refreshPage);
+            function refreshPage(){
+                window.location.reload();
+            }
         } else if ((cells[0].innerHTML == 'O' && cells[1].innerHTML == 'O' && cells[2].innerHTML == 'O') || 
         (cells[3].innerHTML == 'O' && cells[4].innerHTML == 'O' && cells[5].innerHTML == 'O') ||
         (cells[6].innerHTML == 'O' && cells[7].innerHTML == 'O' && cells[8].innerHTML == 'O') ||
@@ -37,8 +45,16 @@ function checkWinner() {
         (cells[0].innerHTML == 'O' && cells[4].innerHTML == 'O' && cells[8].innerHTML == 'O') ) {
             var winner = document.createElement('div');
             winner.innerText = 'O won!';
-            board.innerHTML = winner;
-            console.log(winner);
+            board.innerHTML = '';
+            board.appendChild(winner);
+            var button = document.createElement('button');
+            button.innerText = 'Play again';
+            button.setAttribute('type', 'button');
+            board.appendChild(button);
+            button.addEventListener('click', refreshPage);
+            function refreshPage(){
+                window.location.reload();
+            }
         } 
 };
 
