@@ -32,6 +32,10 @@ body {
     text-align: center;
 }
 
+.cell.checked {
+    cursor: default;
+}
+
 .cell:first-child {
     border-right: 1px solid black;
 }
