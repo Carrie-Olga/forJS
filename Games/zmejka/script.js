@@ -81,9 +81,18 @@ function spawnFood(size) {
     let food;
     do {
         food = game.fields.children[Math.floor(Math.random() * size)].children[Math.floor(Math.random() * size)];
-    } while (food.classList.contains('snake-cell'));
+    } while (food.classList.contains('snake-cell') && !food.classList.contains('block'));
     food.eat = true;
     food.style.background = 'white';
+}
+
+function spawnBlock(size) {
+    let block;
+    do {
+        block = game.fields.children[Math.floor(Math.random() * size)].children[Math.floor(Math.random() * size)];
+    } while (block.classList.contains('snake-cell') && !nextCell.classList.contains('food'));
+    block.classList.add('block');
+    block.style.background = 'red';
 }
 
 function changeDirection(event) {
@@ -117,10 +126,11 @@ console.log(event.code);
 
 function snakeMotion(snake) {
     const nextCell = game.snake[game.snake.direction];
-    if (nextCell && !nextCell.classList.contains('snake-cell')) {
+    if (nextCell && !nextCell.classList.contains('snake-cell') && !nextCell.classList.contains('block')) {
          nextCell.direction = game.snake.direction;
          nextCell.tail = game.snake;
          if (nextCell.eat) {
+            spawnBlock(FIELD_SIZE);
             spawnFood(FIELD_SIZE);
             game.points = game.points + 1;
             document.querySelector('.points').textContent = game.points;
@@ -141,7 +151,7 @@ function snakeMotion(snake) {
           game.snake = nextCell;
           game.snake.className = 'snake-cell';
           currentCell.style.background = '';
-          
+
     } else {
         console.log('You lost');
         clearInterval(game.interval);
@@ -161,5 +171,6 @@ function startGame() {
     game.points = 0;
     points.textContent = 0;
     spawnFood(FIELD_SIZE);
+    spawnBlock(FIELD_SIZE);
     game.interval = setInterval(snakeMotion, SNAKE_SPEED);
 }
