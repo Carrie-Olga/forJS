@@ -3,29 +3,31 @@ let choice = document.querySelectorAll('.choice');
 let sumCalories = 0;
 let sumPrice = 0;
 
-for (let i = 0; i < choice.length; i++) {
+for (let i = 0; i < choice.length; i++) { //filling in titles to the radio buttons
     let price = choice[i].dataset.price;
     let calories = choice[i].dataset.calories;
     let title = choice[i].dataset.title;
 
     choice[i].insertAdjacentHTML('afterend', `<span>${title}: ${price} rub and ${calories} calories</span><br>`);
-    if (choice[i].checked) {
-        sumCalories += parseInt(calories);
-        sumPrice += parseInt(price);
-    }
 }
-console.log(sumCalories, sumPrice);
-document.querySelector('#log').innerHTML = `${sumPrice} rub and ${sumCalories} calories.`;
 
-// function eventListener() {
-//     let form = document.querySelector("form");
-//     let log = document.querySelector("#log");
-//
-//     form.addEventListener("submit", function(event) {
-//
-//         event.preventDefault();
-//     }, false);
-// }
+
+    let button = document.querySelector("button");
+    button.addEventListener("click", function(event) {
+        let choice = document.querySelectorAll('.choice');
+        for (let i = 0; i < choice.length; i++) {
+            if (choice[i].checked) {
+                sumCalories += parseInt(choice[i].dataset.calories);
+                sumPrice += parseInt(choice[i].dataset.price);
+            }
+        }
+        console.log(sumCalories, sumPrice);
+        document.querySelector('#log').innerHTML = `${sumPrice} rub and ${sumCalories} calories.`;
+        event.preventDefault();
+    }, false);
+
+
+
 
 
 class Hamburger {
