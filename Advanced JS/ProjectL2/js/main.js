@@ -47,6 +47,9 @@ class ProductItem {
 
 const list = new ProductList();
 
+//
+// trying to commit to git in webstorm
+//
 // const products = [
 //   {id: 1, title: 'Notebook', price: 1000},
 //   {id: 2, title: 'Mouse', price: 100},
