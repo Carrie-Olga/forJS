@@ -1,21 +1,35 @@
+//const API_CART = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
 class Cart {
-    constructor(container) {
+    constructor(container = '.cart') {
         this.container = container;
         this.cartGoods = [];
         this.cartProducts = [];
-        this._fetchProducts();
-        this._render();
+        //this._fetchProducts();
+        this._getProducts()
+            .then(data => {
+                this.cartGoods = [...data];
+                this._render();
+                console.log(this.cartProducts);
+            });
         this._cartTotal();
         this.clearCart();
         this.sendOrder();
     }
-    _fetchProducts() { //put user selected goods in cartProduct (make them cart products, not regular)
-        //pick a good selected by user
-        //push it to the cartGoods array
+    // _fetchProducts() { //put user selected goods in cartProduct (make them cart products, not regular)
+    //     //pick a good selected by user
+    //     //push it to the cartGoods array
+    // }
+    _getProducts() {
+        return fetch(`${API}/getBasket.json`)
+            .then(result => result.json())
+            .catch(error => {
+                console.log(error);
+            });
     }
     _render() { //take each good and make a cart item of it
         const block = document.querySelector(this.container);
-
+        console.log(block);
         for (let product of this.cartGoods) {
             const productObject = new CartItem(product);
             this.cartProducts.push(productObject);
@@ -29,9 +43,7 @@ class Cart {
             sumCount += itemPrice;
         }
         const block = document.querySelector(this.container);
-        const total = `<div class = "cart-total">
-                        <p>You ordered for ${sumCount} euro</p>
-                        </div>`;
+        const total = `<div class = "cart-total"><p>You ordered for ${sumCount} euro</p></div>`;
         block.insertAdjacentHTML('beforeend', total);
     }
     clearCart() {
@@ -68,3 +80,5 @@ class CartItem {
 
     }
 }
+
+const cartList = new Cart();

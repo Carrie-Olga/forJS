@@ -14,8 +14,15 @@ header {
     flex-wrap: wrap;
     background-color: rgb(224, 191, 191);
     padding: 20px;
+    margin-bottom: 50px;
 }
-
+.cart {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(224, 191, 191);
+    padding: 20px;
+}
 .logo {
  color: white;
 }
